@@ -32,7 +32,7 @@ export default function Hero() {
 
             {/* DOWNLOAD CV BUTTON */}
             <a
-              href="public/ATS_Resume.pdf"
+              href="/ATS_Resume.pdf"
               download
               className="btn btn-outline-dark"
             >
