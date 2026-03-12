@@ -57,7 +57,6 @@ export default function Contact() {
         </button>
 
       </form>
-      <Footer/>
     </section>
   );
 }

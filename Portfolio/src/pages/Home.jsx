@@ -61,8 +61,6 @@ export default function Hero() {
         </div>
       </div>
       <Socials />
-      <Footer />
-
     </section>
 
   );

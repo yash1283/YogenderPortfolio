@@ -34,7 +34,7 @@ export default function About() {
         <div className="col-lg-5 text-center">
           {/* You can put a profile picture here if you have one */}
           <img
-            src="src\assets\profileImg.jpeg"
+            src="public\profileImg.jpeg"
             alt="Profile"
             className="img-fluid rounded shadow"
             width="40%"
@@ -102,7 +102,6 @@ export default function About() {
 
         </ul>
       </div>
-      <Footer/>
     </section>
     
   );
