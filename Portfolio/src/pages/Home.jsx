@@ -1,6 +1,7 @@
 import BackgroundAnimation from "../components/BgAnimation";
-import Socials from "../components/Socials"
+import Socials from "../components/Socials";
 import Footer from "../components/Footer";
+
 export default function Hero() {
   return (
     <section className="bg-light py-5 container-fluid">
@@ -29,9 +30,15 @@ export default function Hero() {
               Hire Me
             </button>
 
-            <button className="btn btn-outline-dark">
+            {/* DOWNLOAD CV BUTTON */}
+            <a
+              href="public/ATS_Resume.pdf"
+              download
+              className="btn btn-outline-dark"
+            >
               Download CV
-            </button>
+            </a>
+
           </div>
 
           {/* RIGHT SIDE - ANIMATION */}
@@ -40,28 +47,32 @@ export default function Hero() {
           </div>
 
         </div>
-
       </div>
+
       <br />
       <br />
       <hr />
+
       <div className="container">
         <h2 className="fw-bold display-6">Training & Certifications</h2>
-        <div className="">
-          <br />
-          <h3 className="lead fw-semibold">Apna College (MERN Stack)</h3>
-          <p className="lead">
-            Successfully completed a MERN Stack development program focused on building full-stack web applications using MongoDB, Express.js, React.js, and Node.js. Developed expertise in creating RESTful APIs, implementing authentication systems, handling client-server communication, managing databases, and deploying responsive applications. This course enhanced my ability to design, develop, and maintain scalable web solutions.
-          </p>
-          <hr />
-          <h3 className="lead fw-semibold">G&P IT Solution (Front End Technologies)</h3>
-          <p className="lead">
-            I completed a professional MERN Stack certification where I learned to design and develop full-stack web applications using MongoDB, Express.js, React.js, and Node.js. I gained practical experience in API development, database schema design, user authentication (JWT), middleware implementation, state management, and integrating frontend with backend services. This training enhanced my understanding of modern web application architecture and scalable system design.
-          </p>
-        </div>
+
+        <br />
+
+        <h3 className="lead fw-semibold">Apna College (MERN Stack)</h3>
+        <p className="lead">
+          Successfully completed a MERN Stack development program focused on building full-stack web applications using MongoDB, Express.js, React.js, and Node.js.
+        </p>
+
+        <hr />
+
+        <h3 className="lead fw-semibold">G&P IT Solution (Front End Technologies)</h3>
+        <p className="lead">
+          I completed a professional MERN Stack certification where I learned to design and develop full-stack web applications using MongoDB, Express.js, React.js, and Node.js.
+        </p>
+
       </div>
+
       <Socials />
     </section>
-
   );
 }

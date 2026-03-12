@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Footer from "../components/Footer";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
 
@@ -18,8 +18,28 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Message Sent!");
+
+    emailjs.send(
+      "service_2fzg7en",      // replace with your service ID
+      "template_lsz3sdc",     // replace with your template ID
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      },
+      "9d-OtoTjZxp_SX8OP"    // replace with your public key
+    )
+    .then(() => {
+      alert("Message Sent Successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
+    })
+    .catch(() => {
+      alert("Failed to send message.");
+    });
   };
 
   return (
@@ -33,7 +53,9 @@ export default function Contact() {
           name="name"
           placeholder="Your Name"
           className="form-control mb-3"
+          value={formData.name}
           onChange={handleChange}
+          required
         />
 
         <input
@@ -41,7 +63,9 @@ export default function Contact() {
           name="email"
           placeholder="Your Email"
           className="form-control mb-3"
+          value={formData.email}
           onChange={handleChange}
+          required
         />
 
         <textarea
@@ -49,7 +73,9 @@ export default function Contact() {
           placeholder="Your Message"
           className="form-control mb-3"
           rows="4"
+          value={formData.message}
           onChange={handleChange}
+          required
         />
 
         <button className="btn btn-primary">
