@@ -34,7 +34,7 @@ export default function About() {
         <div className="col-lg-5 text-center">
           {/* You can put a profile picture here if you have one */}
           <img
-            src="public\profileImg.jpeg"
+            src="profileImg.jpeg"
             alt="Profile"
             className="img-fluid rounded shadow"
             width="40%"

@@ -1,8 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArtstation } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
+
+  const closeNavbar = () => {
+    const navbar = document.getElementById("navbarNav");
+    if (navbar.classList.contains("show")) {
+      navbar.classList.remove("show");
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -25,19 +33,27 @@ export default function Navbar() {
           <ul className="navbar-nav ms-auto">
 
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <Link className="nav-link" to="/about" onClick={closeNavbar}>
+                About
+              </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/skills">Skills</Link>
+              <Link className="nav-link" to="/skills" onClick={closeNavbar}>
+                Skills
+              </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/projects">Projects</Link>
+              <Link className="nav-link" to="/projects" onClick={closeNavbar}>
+                Projects
+              </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+              <Link className="nav-link" to="/contact" onClick={closeNavbar}>
+                Contact
+              </Link>
             </li>
 
           </ul>
@@ -45,5 +61,5 @@ export default function Navbar() {
 
       </div>
     </nav>
-  )
+  );
 }
